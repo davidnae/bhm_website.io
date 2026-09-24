@@ -1,0 +1,851 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Adelphi Black History Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,300&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    --stone:      #E7E2D6;
+    --stone-warm: #F1EDE3;
+    --ink:        #191C22;
+    --ink-soft:   #4B4F58;
+    --ink-faint:  #85837A;
+    --rule:       #C6BFAE;
+    --brass:      #8E6912;
+    --oxblood:    #8E2C29;
+    --jade:       #1C6349;
+    --card:       #F1EDE3;
+    --card-edge:  #D3CCBA;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --stone:      #15181E;
+      --stone-warm: #1C2029;
+      --ink:        #EDE8DB;
+      --ink-soft:   #ABA79B;
+      --ink-faint:  #77746B;
+      --rule:       #343A45;
+      --brass:      #D8AC4D;
+      --oxblood:    #CF6E67;
+      --jade:       #4FB088;
+      --card:       #1C2029;
+      --card-edge:  #2E3440;
+    }
+  }
+  :root[data-theme="dark"] {
+    --stone:      #15181E;
+    --stone-warm: #1C2029;
+    --ink:        #EDE8DB;
+    --ink-soft:   #ABA79B;
+    --ink-faint:  #77746B;
+    --rule:       #343A45;
+    --brass:      #D8AC4D;
+    --oxblood:    #CF6E67;
+    --jade:       #4FB088;
+    --card:       #1C2029;
+    --card-edge:  #2E3440;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--stone);
+    color: var(--ink);
+    font-family: "Newsreader", Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-inline: 20px;
+    padding-block: 0 72px;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead { padding-block: 44px 8px; }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--brass);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    align-items: baseline;
+    margin: 0;
+  }
+  .eyebrow span { color: var(--ink-faint); }
+
+  h1 {
+    font-family: "Big Shoulders Display", "Arial Narrow", sans-serif;
+    font-weight: 800;
+    font-size: clamp(48px, 11.5vw, 104px);
+    line-height: .88;
+    letter-spacing: -.005em;
+    text-transform: uppercase;
+    margin: 16px 0 0;
+    text-wrap: balance;
+  }
+  h1 em {
+    font-style: normal;
+    display: block;
+    color: var(--brass);
+  }
+
+  .standfirst {
+    max-width: 58ch;
+    margin: 22px 0 0;
+    font-size: 20px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+  }
+  .standfirst strong { color: var(--ink); font-weight: 600; }
+
+  .theme-note {
+    margin-top: 26px;
+    padding: 16px 20px;
+    border-left: 3px solid var(--brass);
+    background: var(--stone-warm);
+    font-size: 16.5px;
+    line-height: 1.5;
+    max-width: 66ch;
+  }
+  .theme-note b {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--brass);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* ---------- section headings ---------- */
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin: 56px 0 0;
+    padding-bottom: 9px;
+    border-bottom: 1.5px solid var(--rule);
+  }
+  .sec-head h2 {
+    font-family: "Big Shoulders Display", "Arial Narrow", sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: .015em;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1;
+  }
+  .sec-head .count {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-left: auto;
+    text-align: right;
+  }
+
+  /* ---------- map ---------- */
+  .mapbox {
+    margin-top: 24px;
+    background: var(--stone-warm);
+    border: 1px solid var(--card-edge);
+    padding: 6px;
+  }
+  .mapbox svg { display: block; width: 100%; height: auto; max-width: 100%; }
+
+  .ring { fill: none; stroke: var(--rule); stroke-width: 1; }
+  .ring.outer { stroke-dasharray: 3 5; }
+  .spoke { stroke: var(--rule); stroke-width: .75; opacity: .5; }
+  .ringlab, .arealab {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    letter-spacing: .14em;
+    fill: var(--ink-faint);
+  }
+  .ringlab { font-size: 11px; }
+  .arealab { font-size: 10.5px; letter-spacing: .2em; }
+  .compass {
+    font-family: "Big Shoulders Display", "Arial Narrow", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    fill: var(--ink-faint);
+  }
+
+  .pin { cursor: pointer; }
+  .pin circle {
+    stroke: var(--stone-warm);
+    stroke-width: 2.5;
+    transition: r .15s ease, opacity .15s ease;
+  }
+  .pin text {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 600;
+    fill: #F1EDE3;
+    text-anchor: middle;
+    dominant-baseline: central;
+    pointer-events: none;
+  }
+  .pin.eat   circle { fill: var(--oxblood); }
+  .pin.shop  circle { fill: var(--jade); }
+  .pin.herit circle { fill: var(--brass); }
+  .pin:hover circle, .pin.lit circle { r: 15.5; }
+  .pin.dim { opacity: .15; }
+  .pin:focus-visible circle { stroke: var(--ink); stroke-width: 3; }
+
+  .hub circle { fill: none; stroke: var(--ink); stroke-width: 2; }
+  .hub .dot { fill: var(--ink); stroke: none; }
+  .hub text {
+    font-family: "Big Shoulders Display", "Arial Narrow", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: .07em;
+    fill: var(--ink);
+    text-transform: uppercase;
+  }
+
+  /* ---------- filters ---------- */
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+  .filters button {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 9px 15px;
+    border: 1px solid var(--card-edge);
+    background: transparent;
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: background .14s, color .14s, border-color .14s;
+  }
+  .filters button:hover { border-color: var(--ink-soft); color: var(--ink); }
+  .filters button[aria-pressed="true"] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--stone);
+  }
+  .filters button:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+  .swatch {
+    display: inline-block;
+    width: 8px; height: 8px;
+    margin-right: 7px;
+    vertical-align: 1px;
+  }
+  .sw-eat   { background: var(--oxblood); }
+  .sw-shop  { background: var(--jade); }
+  .sw-herit { background: var(--brass); }
+
+  /* ---------- listings ---------- */
+  .tier { margin-top: 44px; }
+  .tier[hidden] { display: none !important; }
+  .tier > h3 {
+    font-family: "Big Shoulders Display", "Arial Narrow", sans-serif;
+    font-weight: 700;
+    font-size: 27px;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    margin: 0 0 2px;
+    line-height: 1;
+  }
+  .tier > p.tier-sub {
+    margin: 0 0 16px;
+    font-size: 15.5px;
+    font-style: italic;
+    color: var(--ink-faint);
+  }
+
+  .list { display: grid; gap: 1px; background: var(--card-edge); }
+
+  .entry {
+    display: grid;
+    grid-template-columns: 46px 1fr 78px;
+    gap: 0 16px;
+    align-items: start;
+    background: var(--card);
+    padding: 17px 18px;
+    scroll-margin-top: 24px;
+    transition: background .15s ease;
+  }
+  .entry.lit { background: var(--stone); }
+  .entry[hidden] { display: none !important; }
+
+  .num {
+    font-family: "Big Shoulders Display", "Arial Narrow", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: .95;
+    color: var(--ink);
+    border-top: 3px solid var(--oxblood);
+    padding-top: 6px;
+    font-variant-numeric: tabular-nums;
+  }
+  .entry.shop  .num { border-top-color: var(--jade); }
+  .entry.herit .num { border-top-color: var(--brass); }
+
+  .entry h4 {
+    margin: 0;
+    font-family: "Big Shoulders Display", "Arial Narrow", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: .015em;
+    text-transform: uppercase;
+    line-height: 1.03;
+  }
+  .kind {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin: 5px 0 0;
+  }
+  .entry p.blurb { margin: 9px 0 0; font-size: 16.5px; line-height: 1.46; }
+  .entry p.addr {
+    margin: 9px 0 0;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .entry p.addr .who { color: var(--ink); font-weight: 500; }
+  .walk {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-align: right;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+    padding-top: 5px;
+    text-transform: uppercase;
+  }
+  .walk b {
+    display: block;
+    font-family: "Big Shoulders Display", "Arial Narrow", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  /* ---------- notes ---------- */
+  .cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(248px, 1fr));
+    gap: 28px 34px;
+    margin-top: 24px;
+  }
+  .cols h4 {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin: 0 0 9px;
+  }
+  .cols p, .cols li { font-size: 16px; line-height: 1.5; color: var(--ink-soft); }
+  .cols p { margin: 0 0 11px; }
+  .cols ul { margin: 0; padding-left: 19px; }
+  .cols li { margin-bottom: 8px; }
+  .cols strong { color: var(--ink); font-weight: 600; }
+
+  footer.foot {
+    margin-top: 54px;
+    padding-top: 18px;
+    border-top: 1.5px solid var(--rule);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11.5px;
+    line-height: 1.85;
+    color: var(--ink-faint);
+    letter-spacing: .01em;
+  }
+  footer.foot a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  footer.foot a:hover { color: var(--brass); }
+
+  @media (max-width: 580px) {
+    .entry { grid-template-columns: 36px 1fr; }
+    .walk { grid-column: 2; text-align: left; padding-top: 10px; }
+    .walk b { display: inline; font-size: 21px; margin-right: 5px; }
+    .num { font-size: 24px; }
+    .entry h4 { font-size: 21px; }
+    .standfirst { font-size: 18px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="eyebrow">Black History Month UK <span>/</span> October 2026 <span>/</span> Honouring Our Communities</p>
+    <h1>Twenty Minutes<em>From The Adelphi</em></h1>
+    <p class="standfirst">
+      Black-owned businesses and Black British history, measured in walking minutes from
+      <strong>1&ndash;11 John Adam Street</strong>. Every entry has a named owner and was
+      confirmed trading in September 2026.
+    </p>
+    <div class="theme-note">
+      <b>Why this, this year</b>
+      The UK theme for 2026 is <em>Honouring Our Communities</em> &mdash; the everyday work that
+      sustains Black life in Britain, rather than only its landmark names. Spending money seven
+      minutes from your desk is a more literal reading of that than a portrait wall.
+    </div>
+  </header>
+
+  <div class="sec-head">
+    <h2>The map</h2>
+    <span class="count">Rings are walking minutes &middot; bearings are true</span>
+  </div>
+
+  <div class="mapbox">
+    <svg viewBox="70 20 690 700" role="img" aria-label="A radial map centred on The Adelphi. Nineteen numbered pins are placed by true compass bearing, at a distance set by walking minutes, with rings marking ten, twenty and thirty minutes and an outer band for everything further.">
+
+      <g class="spoke">
+        <line x1="410" y1="352" x2="410" y2="52"/>
+        <line x1="410" y1="352" x2="622.1" y2="139.9"/>
+        <line x1="410" y1="352" x2="710" y2="352"/>
+        <line x1="410" y1="352" x2="622.1" y2="564.1"/>
+        <line x1="410" y1="352" x2="410" y2="652"/>
+        <line x1="410" y1="352" x2="197.9" y2="564.1"/>
+        <line x1="410" y1="352" x2="110" y2="352"/>
+        <line x1="410" y1="352" x2="197.9" y2="139.9"/>
+      </g>
+
+      <circle class="ring" cx="410" cy="352" r="105"/>
+      <circle class="ring" cx="410" cy="352" r="175"/>
+      <circle class="ring" cx="410" cy="352" r="245"/>
+      <circle class="ring outer" cx="410" cy="352" r="285"/>
+
+      <g class="ringlab" text-anchor="middle">
+        <text x="332" y="426">10 MIN</text>
+        <text x="280" y="473">20 MIN</text>
+        <text x="228" y="520">30 MIN</text>
+        <text x="196" y="549">BEYOND</text>
+      </g>
+
+      <g class="compass" text-anchor="middle">
+        <text x="410" y="40">N</text>
+        <text x="733" y="359">E</text>
+        <text x="410" y="678">S</text>
+        <text x="87" y="359">W</text>
+      </g>
+
+      <g class="arealab" text-anchor="middle">
+        <text x="508" y="50">NORTH LONDON</text>
+        <text x="685" y="193">EAST LONDON</text>
+        <text x="377" y="668">SOUTH LONDON</text>
+        <text x="111" y="243">WEST LONDON</text>
+      </g>
+
+      <g class="hub">
+        <circle cx="410" cy="352" r="22"/>
+        <circle class="dot" cx="410" cy="352" r="4.5"/>
+        <text x="410" y="393" text-anchor="middle">THE ADELPHI</text>
+      </g>
+
+      <g id="pins">
+        <g class="pin herit" data-n="1"  tabindex="0" role="button" aria-label="1. 38 King Street, five minutes"><circle cx="380.4" cy="285.5" r="12"/><text x="380.4" y="285.5">1</text></g>
+        <g class="pin herit" data-n="2"  tabindex="0" role="button" aria-label="2. National Portrait Gallery, seven minutes"><circle cx="328.9" cy="336.2" r="12"/><text x="328.9" y="336.2">2</text></g>
+        <g class="pin eat"   data-n="3"  tabindex="0" role="button" aria-label="3. Jamaica Patty Co, seven minutes"><circle cx="337.9" cy="310.4" r="12"/><text x="337.9" y="310.4">3</text></g>
+        <g class="pin eat"   data-n="4"  tabindex="0" role="button" aria-label="4. Enish, eight minutes"><circle cx="352.7" cy="278.6" r="12"/><text x="352.7" y="278.6">4</text></g>
+        <g class="pin eat"   data-n="5"  tabindex="0" role="button" aria-label="5. Ikoyi, eleven minutes"><circle cx="497.2" cy="286.3" r="12"/><text x="497.2" y="286.3">5</text></g>
+        <g class="pin eat"   data-n="6"  tabindex="0" role="button" aria-label="6. Limin Southbank, thirteen minutes"><circle cx="533.2" cy="365" r="12"/><text x="533.2" y="365">6</text></g>
+        <g class="pin shop"  data-n="7"  tabindex="0" role="button" aria-label="7. GABU Chocolate, thirteen minutes"><circle cx="524.9" cy="398.4" r="12"/><text x="524.9" y="398.4">7</text></g>
+        <g class="pin herit" data-n="8"  tabindex="0" role="button" aria-label="8. Mandela statue, Parliament Square, sixteen minutes"><circle cx="351.3" cy="483.7" r="12"/><text x="351.3" y="483.7">8</text></g>
+        <g class="pin herit" data-n="9"  tabindex="0" role="button" aria-label="9. Mary Seacole statue, eighteen minutes"><circle cx="449.1" cy="508.9" r="12"/><text x="449.1" y="508.9">9</text></g>
+        <g class="pin eat"   data-n="10" tabindex="0" role="button" aria-label="10. Sista Barista, twenty-one minutes"><circle cx="511.4" cy="502.3" r="12"/><text x="511.4" y="502.3">10</text></g>
+        <g class="pin eat"   data-n="11" tabindex="0" role="button" aria-label="11. Akoko, twenty-three minutes"><circle cx="266.4" cy="222.7" r="12"/><text x="266.4" y="222.7">11</text></g>
+        <g class="pin eat"   data-n="12" tabindex="0" role="button" aria-label="12. Chishuru, twenty-five minutes"><circle cx="230.7" cy="240" r="12"/><text x="230.7" y="240">12</text></g>
+        <g class="pin herit" data-n="13" tabindex="0" role="button" aria-label="13. Olaudah Equiano plaque, twenty-nine minutes"><circle cx="236.4" cy="190.2" r="12"/><text x="236.4" y="190.2">13</text></g>
+        <g class="pin eat"   data-n="14" tabindex="0" role="button" aria-label="14. Akara at Borough Market"><circle cx="690.7" cy="401.5" r="12"/><text x="690.7" y="401.5">14</text></g>
+        <g class="pin eat"   data-n="15" tabindex="0" role="button" aria-label="15. Sweet Dee's Jerk at Selfridges"><circle cx="145.8" cy="245.2" r="12"/><text x="145.8" y="245.2">15</text></g>
+        <g class="pin shop"  data-n="16" tabindex="0" role="button" aria-label="16. Connaught Village"><circle cx="125.2" cy="342.1" r="12"/><text x="125.2" y="342.1">16</text></g>
+        <g class="pin shop"  data-n="17" tabindex="0" role="button" aria-label="17. Dark Sugars, Brick Lane"><circle cx="674.2" cy="245.2" r="12"/><text x="674.2" y="245.2">17</text></g>
+        <g class="pin herit" data-n="18" tabindex="0" role="button" aria-label="18. Brixton"><circle cx="439.8" cy="635.4" r="12"/><text x="439.8" y="635.4">18</text></g>
+        <g class="pin shop"  data-n="19" tabindex="0" role="button" aria-label="19. New Beacon Books, Finsbury Park"><circle cx="444.7" cy="69.1" r="12"/><text x="444.7" y="69.1">19</text></g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="filters" id="filters">
+    <button type="button" id="f-all" data-f="all" aria-pressed="true">All nineteen</button>
+    <button type="button" id="f-eat" data-f="eat" aria-pressed="false"><span class="swatch sw-eat"></span>Eat &amp; drink</button>
+    <button type="button" id="f-shop" data-f="shop" aria-pressed="false"><span class="swatch sw-shop"></span>Shop &amp; read</button>
+    <button type="button" id="f-herit" data-f="herit" aria-pressed="false"><span class="swatch sw-herit"></span>Heritage &amp; free</button>
+  </div>
+
+  <section class="tier" id="t1">
+    <h3>Lunch break</h3>
+    <p class="tier-sub">Under fifteen minutes. You can be back at your desk.</p>
+    <div class="list">
+
+      <article class="entry herit" id="e1" data-k="herit">
+        <div class="num">1</div>
+        <div>
+          <h4>38 King Street</h4>
+          <p class="kind">Heritage &middot; plaque only</p>
+          <p class="blurb">The Africa Centre&rsquo;s home from 1964 to 2013. Desmond Tutu met Thabo Mbeki at the bar; from 1985 Jazzie B ran the Soul II Soul sound system here, and the Limpopo Club put on Youssou N&rsquo;Dour and Ang&eacute;lique Kidjo. It is retail now, which is its own piece of the story.</p>
+          <p class="addr">38 King Street, Covent Garden WC2E 8JS<br><span class="who">Note:</span> the charity&rsquo;s later Southwark building closed in July 2026, so King Street is the site to mark.</p>
+        </div>
+        <div class="walk"><b>5</b>min walk</div>
+      </article>
+
+      <article class="entry herit" id="e2" data-k="herit">
+        <div class="num">2</div>
+        <div>
+          <h4>National Portrait Gallery</h4>
+          <p class="kind">Heritage &middot; free entry</p>
+          <p class="blurb">Holds the only known painted portrait of Mary Seacole &mdash; lost for more than a century, identified in 2003, hanging here now. Free, and open at lunchtime.</p>
+          <p class="addr">St Martin&rsquo;s Place WC2H 0HE</p>
+        </div>
+        <div class="walk"><b>7</b>min walk</div>
+      </article>
+
+      <article class="entry eat" id="e3" data-k="eat">
+        <div class="num">3</div>
+        <div>
+          <h4>Jamaica Patty Co</h4>
+          <p class="kind">Jamaican patties &amp; bakery</p>
+          <p class="blurb">Started in 2013 because you could not get a decent patty in London. Cheap, quick, and the realistic option for a team lunch run.</p>
+          <p class="addr">26 New Row WC2N 4LA<br><span class="who">Theresa Roberts</span>, Jamaican-born art curator, with chef Collin Brown</p>
+        </div>
+        <div class="walk"><b>7</b>min walk</div>
+      </article>
+
+      <article class="entry eat" id="e4" data-k="eat">
+        <div class="num">4</div>
+        <div>
+          <h4>Enish</h4>
+          <p class="kind">Nigerian restaurant &amp; Afrobeats lounge</p>
+          <p class="blurb">Jollof, suya and grills, with live music later on. The name is a portmanteau of the founders&rsquo; own &mdash; Eniola and Shola &mdash; which tells you what kind of business it is.</p>
+          <p class="addr">5 Great Newport Street WC2H 7JB<br><span class="who">Olushola &amp; Eniola Medupin</span></p>
+        </div>
+        <div class="walk"><b>8</b>min walk</div>
+      </article>
+
+      <article class="entry eat" id="e5" data-k="eat">
+        <div class="num">5</div>
+        <div>
+          <h4>Ikoyi</h4>
+          <p class="kind">West African fine dining &middot; two Michelin stars</p>
+          <p class="blurb">The only Black-owned business on the Strand itself, and the least likely lunch: a &pound;395 tasting menu built on West African spicing and British seasonality, named Best Global Restaurant at the 2026 Tastemakers Awards. A pin for pride rather than payday.</p>
+          <p class="addr">180 Strand WC2R 1EA<br><span class="who">Ir&eacute; Hassan-Odukale</span>, co-founder, with chef Jeremy Chan</p>
+        </div>
+        <div class="walk"><b>11</b>min walk</div>
+      </article>
+
+      <article class="entry eat" id="e6" data-k="eat">
+        <div class="num">6</div>
+        <div>
+          <h4>Limin Southbank</h4>
+          <p class="kind">Trinidadian kitchen &amp; rum bar</p>
+          <p class="blurb">Best Caribbean Restaurant at the UK Caribbean Food Awards, with a sand floor in summer. Over Waterloo Bridge, so it doubles as a walk. The obvious pick if you want one booking for the whole office.</p>
+          <p class="addr">Gabriel&rsquo;s Wharf, 56 Upper Ground SE1 9PP<br><span class="who">Sham Mahabir</span>, Trinidadian chef, co-owner</p>
+        </div>
+        <div class="walk"><b>13</b>min walk</div>
+      </article>
+
+      <article class="entry shop" id="e7" data-k="shop">
+        <div class="num">7</div>
+        <div>
+          <h4>GABU Chocolate</h4>
+          <p class="kind">Bean-to-bar chocolatier</p>
+          <p class="blurb">Chocolate made by hand on the premises from single-origin cocoa from Grenada, the Dominican Republic and Madagascar. Same courtyard as Limin &mdash; one trip, two entries, and something to hand round the office.</p>
+          <p class="addr">Unit 7, Gabriel&rsquo;s Wharf, 56 Upper Ground SE1 9PP<br><span class="who">Lisette Davis</span></p>
+        </div>
+        <div class="walk"><b>13</b>min walk</div>
+      </article>
+
+      <article class="entry herit" id="e8" data-k="herit">
+        <div class="num">8</div>
+        <div>
+          <h4>Mandela, Parliament Square</h4>
+          <p class="kind">Heritage &middot; outdoors, free</p>
+          <p class="blurb">Ian Walters&rsquo; bronze, unveiled in 2007 after a campaign to put it in the square with the prime ministers rather than somewhere quieter.</p>
+          <p class="addr">Parliament Square SW1P 3JX</p>
+        </div>
+        <div class="walk"><b>16</b>min walk</div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="tier" id="t2">
+    <h3>After work</h3>
+    <p class="tier-sub">Fifteen to thirty minutes on foot, or a few stops on the tube.</p>
+    <div class="list">
+
+      <article class="entry herit" id="e9" data-k="herit">
+        <div class="num">9</div>
+        <div>
+          <h4>Mary Seacole statue</h4>
+          <p class="kind">Heritage &middot; outdoors, free</p>
+          <p class="blurb">The first statue in Britain of a named Black woman, unveiled in 2016 by Baroness Floella Benjamin after a twelve-year campaign. Martin Jennings&rsquo; bronze stands in the hospital gardens facing Parliament, which is not an accident.</p>
+          <p class="addr">St Thomas&rsquo; Hospital gardens, Lambeth Palace Road SE1 7EH</p>
+        </div>
+        <div class="walk"><b>18</b>min walk</div>
+      </article>
+
+      <article class="entry eat" id="e10" data-k="eat">
+        <div class="num">10</div>
+        <div>
+          <h4>Sista Barista</h4>
+          <p class="kind">Independent caf&eacute;</p>
+          <p class="blurb">A corner caf&eacute; run by two sisters with their daughters &mdash; speciality coffee, homemade breakfasts, 4.8 stars across several hundred reviews. Exactly the kind of business this year&rsquo;s theme is pointing at.</p>
+          <p class="addr">141 Westminster Bridge Road SE1 7HR<br><span class="who">Wendy &amp; Kay</span>, with their daughters</p>
+        </div>
+        <div class="walk"><b>21</b>min walk</div>
+      </article>
+
+      <article class="entry eat" id="e11" data-k="eat">
+        <div class="num">11</div>
+        <div>
+          <h4>Akoko</h4>
+          <p class="kind">West African fine dining &middot; one Michelin star</p>
+          <p class="blurb">Live-fire cooking and West African spicing, starred again in the 2026 Michelin Guide.</p>
+          <p class="addr">21 Berners Street W1T 3LP<br><span class="who">Aji Akokomi</span></p>
+        </div>
+        <div class="walk"><b>23</b>min walk</div>
+      </article>
+
+      <article class="entry eat" id="e12" data-k="eat">
+        <div class="num">12</div>
+        <div>
+          <h4>Chishuru</h4>
+          <p class="kind">Modern West African &middot; one Michelin star</p>
+          <p class="blurb">Adejok&eacute; Bakare took a star in 2024, reportedly the first Black woman anywhere to hold one for her own restaurant. She began with a Brixton pop-up won through a competition for the site.</p>
+          <p class="addr">3 Great Titchfield Street W1W 8AX<br><span class="who">Adejok&eacute; Bakare</span>, chef-founder</p>
+        </div>
+        <div class="walk"><b>25</b>min walk</div>
+      </article>
+
+      <article class="entry herit" id="e13" data-k="herit">
+        <div class="num">13</div>
+        <div>
+          <h4>Olaudah Equiano&rsquo;s house</h4>
+          <p class="kind">Heritage &middot; plaque only</p>
+          <p class="blurb">He lodged here in 1789, the year he published <em>The Interesting Narrative</em> &mdash; the book that made the abolitionist case in the voice of a man who had been enslaved, and became a bestseller doing it.</p>
+          <p class="addr">73 Riding House Street W1W 7EJ<br><span class="who">Green plaque</span> by Westminster City Council</p>
+        </div>
+        <div class="walk"><b>29</b>min walk</div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="tier" id="t3">
+    <h3>Worth the journey</h3>
+    <p class="tier-sub">A weekend, or a proper trip out. Grouped by destination.</p>
+    <div class="list">
+
+      <article class="entry eat" id="e14" data-k="eat">
+        <div class="num">14</div>
+        <div>
+          <h4>Akara &mdash; Borough Market</h4>
+          <p class="kind">West African bakery &amp; restaurant</p>
+          <p class="blurb">Aji Akokomi&rsquo;s second, far more casual room, built around akara &mdash; the black-eyed bean fritter &mdash; and West African baking. Walkable in about 35 minutes if you fancy it.</p>
+          <p class="addr">Arch 208, 18 Stoney Street SE1 9AD<br><span class="who">Aji Akokomi</span></p>
+        </div>
+        <div class="walk"><b>15</b>by tube</div>
+      </article>
+
+      <article class="entry eat" id="e15" data-k="eat">
+        <div class="num">15</div>
+        <div>
+          <h4>Sweet Dee&rsquo;s Jerk &mdash; Selfridges</h4>
+          <p class="kind">Caribbean counter</p>
+          <p class="blurb">Curry goat bowls and jerk wraps in the food hall. The brothers bill it as the first Black-owned Caribbean business in the shop&rsquo;s history.</p>
+          <p class="addr">Selfridges Food Hall, 400 Oxford Street W1A 1AB<br><span class="who">Troy &amp; Jarrell Johnson</span></p>
+        </div>
+        <div class="walk"><b>20</b>by tube</div>
+      </article>
+
+      <article class="entry shop" id="e16" data-k="shop">
+        <div class="num">16</div>
+        <div>
+          <h4>Connaught Village</h4>
+          <p class="kind">Caf&eacute; &amp; art gallery</p>
+          <p class="blurb">Two stops on one street. <strong>Saint Aymes</strong> at 59 Connaught Street is the caf&eacute; and chocolatier run by sisters Lois and Michela Wilson. <strong>CasildART</strong> at number 32 is Sukai Eccleston&rsquo;s gallery for contemporary Black art, which also runs an annual Black and Global Majority art fair.</p>
+          <p class="addr">Connaught Street, W2<br><span class="who">Lois &amp; Michela Wilson</span> &middot; <span class="who">Sukai Eccleston</span></p>
+        </div>
+        <div class="walk"><b>20</b>by tube</div>
+      </article>
+
+      <article class="entry shop" id="e17" data-k="shop">
+        <div class="num">17</div>
+        <div>
+          <h4>Dark Sugars &mdash; Brick Lane</h4>
+          <p class="kind">Bean-to-bar chocolatier</p>
+          <p class="blurb">Founded in 1997 by a Ghanaian-born chocolatier who researched cocoa on her own family&rsquo;s farm, trading from a Borough Market stall before opening on Brick Lane in 2013. Two more shops in Greenwich.</p>
+          <p class="addr">141 Brick Lane E1 6SB<br>also 9 &amp; 21 Nelson Road, Greenwich SE10 9JB</p>
+        </div>
+        <div class="walk"><b>25</b>by tube</div>
+      </article>
+
+      <article class="entry herit" id="e18" data-k="herit">
+        <div class="num">18</div>
+        <div>
+          <h4>Brixton</h4>
+          <p class="kind">Archive &amp; bookshop &middot; archive free</p>
+          <p class="blurb">The <strong>Black Cultural Archives</strong> on Windrush Square is the only national heritage centre for Black British history: archives, museum objects and a reference library, free to enter. Thursday to Saturday 10&ndash;6 and Sunday 12&ndash;5, closed Monday to Wednesday, reading room by appointment. Five minutes away, <strong>Round Table Books</strong> in Brixton Village is Aim&eacute;e Felone&rsquo;s shop for Black and Global Majority authors &mdash; the place to buy the office book display.</p>
+          <p class="addr">1 Windrush Square SW2 1EF<br>73 Granville Arcade, Brixton Village SW9 8PS<br><span class="who">Heads up:</span> Round Table Books is crowdfunding a move, so check before you go.</p>
+        </div>
+        <div class="walk"><b>25</b>by tube</div>
+      </article>
+
+      <article class="entry shop" id="e19" data-k="shop">
+        <div class="num">19</div>
+        <div>
+          <h4>New Beacon Books</h4>
+          <p class="kind">Bookshop &amp; publisher</p>
+          <p class="blurb">Britain&rsquo;s first Black publisher and specialist bookshop, founded in 1966 by John La Rose and Sarah White and now run by his son Michael. It nearly closed in 2021 and was saved by a &pound;76,000 crowdfunder. It turned sixty this year, which is the best single fact on this map.</p>
+          <p class="addr">76 Stroud Green Road N4 3EN<br><span class="who">Michael La Rose</span> &middot; Tue&ndash;Sat 11&ndash;6, Thu to 8</p>
+        </div>
+        <div class="walk"><b>30</b>by tube</div>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="sec-head">
+    <h2>Notes before you print it</h2>
+  </div>
+
+  <div class="cols">
+    <div>
+      <h4>What was checked</h4>
+      <p>Every business here has a <strong>named owner</strong> and a source, and was confirmed trading in 2026. Entries that appear on &ldquo;Black-owned London&rdquo; roundups with no Black owner findable anywhere were dropped &mdash; including one Covent Garden caf&eacute; on several such lists whose name turns out to refer to a postage stamp.</p>
+      <p>Where a business has one Black founder alongside others, this says so rather than smoothing it over: Ikoyi, Limin and Chishuru are all co-founded.</p>
+    </div>
+    <div>
+      <h4>Worth a phone call first</h4>
+      <ul>
+        <li><strong>Chishuru&rsquo;s postcode</strong> &mdash; sources split between W1W 8AX and 8AU.</li>
+        <li><strong>Sweet Dee&rsquo;s</strong> Selfridges counter &mdash; their own site has not been updated since 2024.</li>
+        <li><strong>Dark Sugars&rsquo; founder</strong> &mdash; published sources give her name three different ways, so the copy here leaves it out rather than print it wrong.</li>
+        <li><strong>Round Table Books</strong> &mdash; actively raising money to move premises.</li>
+      </ul>
+    </div>
+    <div>
+      <h4>The honest gap</h4>
+      <p>Covent Garden and the Strand are <strong>thin</strong>. Ikoyi is the only Black-owned business on the Strand itself and the nearest real cluster is over the river. Better to say that on the display than to pad the map: the West End is expensive, and whose businesses survive here is part of the history.</p>
+      <p>Three places that would have been on this map closed <strong>this year</strong> &mdash; the Africa Centre&rsquo;s Southwark building, and Little Baobab and Tatale inside it.</p>
+    </div>
+    <div>
+      <h4>Making it a display</h4>
+      <ul>
+        <li>A1 for a main wall, A3 by the kitchen or the lifts.</li>
+        <li>Pin a blank sheet beside it headed <em>&ldquo;Been? Add one&rdquo;</em>. The map gets better, and it stops being something people walk past.</li>
+        <li>Book one team lunch &mdash; Limin takes groups, Jamaica Patty Co is the cheap round.</li>
+        <li>Buy the book display from Round Table Books or New Beacon, not Amazon.</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer class="foot">
+    Compiled 16 September 2026 for the TEG office at The Adelphi. Walking times are estimated from
+    straight-line distance with a routing allowance, so treat them as approximate.<br>
+    Theme and dates from <a href="https://www.blackhistorymonth.org.uk/article/section/bhm-intros/black-history-month-2026-honouring-our-communities/">Black History Month UK</a>.
+    Ownership checked against businesses&rsquo; own sites plus
+    <a href="https://www.blackownedlondon.com/">Black Owned London</a>, Black Eats LDN, EatOkra,
+    <a href="https://blackculturalarchives.org/contact">Black Cultural Archives</a>,
+    <a href="https://guide.michelin.com/us/en/greater-london/london/restaurant/akoko">the Michelin Guide</a> and
+    <a href="https://www.newbeaconbooks.com/new-beacon-books-1">New Beacon Books</a>.
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var pins = Array.prototype.slice.call(document.querySelectorAll('.pin'));
+  var entries = Array.prototype.slice.call(document.querySelectorAll('.entry'));
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('#filters button'));
+  var tiers = Array.prototype.slice.call(document.querySelectorAll('.tier'));
+
+  function entryFor(n) { return document.getElementById('e' + n); }
+  function pinFor(n) { return document.querySelector('.pin[data-n="' + n + '"]'); }
+
+  function select(n) {
+    pins.forEach(function (p) { p.classList.remove('lit'); });
+    entries.forEach(function (e) { e.classList.remove('lit'); });
+    var pin = pinFor(n);
+    var el = entryFor(n);
+    if (pin) pin.classList.add('lit');
+    if (el) {
+      el.classList.add('lit');
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  pins.forEach(function (pin) {
+    var n = pin.getAttribute('data-n');
+    pin.addEventListener('click', function () { select(n); });
+    pin.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); select(n); }
+    });
+    pin.addEventListener('mouseenter', function () {
+      var el = entryFor(n); if (el) el.classList.add('lit');
+    });
+    pin.addEventListener('mouseleave', function () {
+      var el = entryFor(n); if (el) el.classList.remove('lit');
+    });
+  });
+
+  entries.forEach(function (e) {
+    var n = e.id.replace('e', '');
+    e.addEventListener('mouseenter', function () {
+      var pin = pinFor(n); if (pin) pin.classList.add('lit');
+    });
+    e.addEventListener('mouseleave', function () {
+      var pin = pinFor(n); if (pin) pin.classList.remove('lit');
+    });
+  });
+
+  function applyFilter(f) {
+    entries.forEach(function (e) {
+      e.hidden = !(f === 'all' || e.getAttribute('data-k') === f);
+    });
+    pins.forEach(function (p) {
+      var k = p.classList.contains('eat') ? 'eat' : (p.classList.contains('shop') ? 'shop' : 'herit');
+      p.classList.toggle('dim', !(f === 'all' || k === f));
+    });
+    tiers.forEach(function (t) {
+      var any = Array.prototype.slice.call(t.querySelectorAll('.entry')).some(function (e) { return !e.hidden; });
+      t.hidden = !any;
+    });
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      buttons.forEach(function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
+      applyFilter(b.getAttribute('data-f'));
+    });
+  });
+})();
+</script>
+
+</body></html>
